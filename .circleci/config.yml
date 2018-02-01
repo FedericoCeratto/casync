@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+    steps:
+      - checkout
+      - run:
+          name: meson build
+          command: meson build
+      - run:
+          name: ninja build
+          command: ninja -C build
